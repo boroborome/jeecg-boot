@@ -4,7 +4,6 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.happy3w.hire.entity.RequirementDefineLevel;
 import com.happy3w.hire.mapper.RequirementDefineLevelMapper;
 import com.happy3w.hire.service.IRequirementDefineLevelService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,9 +17,12 @@ import java.util.List;
 @Service
 public class RequirementDefineLevelServiceImpl extends ServiceImpl<RequirementDefineLevelMapper, RequirementDefineLevel> implements IRequirementDefineLevelService {
 	
-	@Autowired
-	private RequirementDefineLevelMapper requirementDefineLevelMapper;
-	
+	private final RequirementDefineLevelMapper requirementDefineLevelMapper;
+
+	public RequirementDefineLevelServiceImpl(RequirementDefineLevelMapper requirementDefineLevelMapper) {
+		this.requirementDefineLevelMapper = requirementDefineLevelMapper;
+	}
+
 	@Override
 	public List<RequirementDefineLevel> selectByMainId(String mainId) {
 		return requirementDefineLevelMapper.selectByMainId(mainId);

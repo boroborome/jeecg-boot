@@ -6,7 +6,6 @@ import com.happy3w.hire.entity.RequirementDefineLevel;
 import com.happy3w.hire.mapper.RequirementDefineMapper;
 import com.happy3w.hire.mapper.RequirementDefineLevelMapper;
 import com.happy3w.hire.service.IRequirementDefineService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,11 +22,15 @@ import java.util.List;
 @Service
 public class RequirementDefineServiceImpl extends ServiceImpl<RequirementDefineMapper, RequirementDefine> implements IRequirementDefineService {
 
-	@Autowired
-	private RequirementDefineMapper requirementDefineMapper;
-	@Autowired
-	private RequirementDefineLevelMapper requirementDefineLevelMapper;
-	
+	private final RequirementDefineMapper requirementDefineMapper;
+	private final RequirementDefineLevelMapper requirementDefineLevelMapper;
+
+	public RequirementDefineServiceImpl(RequirementDefineMapper requirementDefineMapper,
+										RequirementDefineLevelMapper requirementDefineLevelMapper) {
+		this.requirementDefineMapper = requirementDefineMapper;
+		this.requirementDefineLevelMapper = requirementDefineLevelMapper;
+	}
+
 	@Override
 	@Transactional(rollbackFor = Exception.class)
 	public void saveMain(RequirementDefine requirementDefine, List<RequirementDefineLevel> requirementDefineLevelList) {
