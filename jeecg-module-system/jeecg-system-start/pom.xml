@@ -18,6 +18,11 @@
             <artifactId>jeecg-system-biz</artifactId>
             <version>${jeecgboot.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.happy3w</groupId>
+            <artifactId>hire-module</artifactId>
+            <version>0.1</version>
+        </dependency>
         <!-- DEMO 示例模块 -->
         <dependency>
             <groupId>org.jeecgframework.boot</groupId>

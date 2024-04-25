@@ -81,6 +81,7 @@
 
 	<modules>
         <module>jeecg-boot-base-core</module>
+		<module>hire-module</module>
         <module>jeecg-module-demo</module>
         <module>jeecg-module-system</module>
     </modules>

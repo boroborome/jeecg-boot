@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.happy3w.hire.mapper.RequirementDefineLevelMapper">
+
+	<delete id="deleteByMainId" parameterType="java.lang.String">
+		DELETE 
+		FROM  requirement_define_level 
+		WHERE
+			 rd_id = #{mainId} 	</delete>
+	
+	<select id="selectByMainId" parameterType="java.lang.String" resultType="com.happy3w.hire.entity.RequirementDefineLevel">
+		SELECT * 
+		FROM  requirement_define_level
+		WHERE
+			 rd_id = #{mainId} 	</select>
+</mapper>
