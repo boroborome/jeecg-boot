@@ -8671,6 +8671,30 @@ VALUES ('2024042410507110535', '2024042410507100530', '导出excel_要求的定�
 INSERT INTO sys_permission(id, parent_id, name, url, component, is_route, component_name, redirect, menu_type, perms, perms_type, sort_no, always_show, icon, is_leaf, keep_alive, hidden, hide_tab, description, create_by, create_time, update_by, update_time, del_flag, rule_flag, status, internal_or_external)
 VALUES ('2024042410507110536', '2024042410507100530', '导入excel_要求的定义', NULL, NULL, 0, NULL, NULL, 2, 'hire:requirement_define:importExcel', '1', NULL, 0, NULL, 1, 0, 0, 0, NULL, 'admin', '2024-04-24 22:50:53', NULL, NULL, 0, 0, '1', 0);
 
+INSERT INTO sys_permission(id, parent_id, name, url, component, component_name, redirect, menu_type, perms, perms_type, sort_no, always_show, icon, is_route, is_leaf, keep_alive, hidden, hide_tab, description, status, del_flag, rule_flag, create_by, create_time, update_by, update_time, internal_or_external)
+VALUES ('2024042703396320180', NULL, '工作岗位', '/hire/jobPositionList', 'hire/JobPositionList', NULL, NULL, 0, NULL, '1', 0.00, 0, NULL, 1, 0, 0, 0, 0, NULL, '1', 0, 0, 'admin', '2024-04-27 15:39:18', NULL, NULL, 0);
+
+-- 权限控制sql
+-- 新增
+INSERT INTO sys_permission(id, parent_id, name, url, component, is_route, component_name, redirect, menu_type, perms, perms_type, sort_no, always_show, icon, is_leaf, keep_alive, hidden, hide_tab, description, create_by, create_time, update_by, update_time, del_flag, rule_flag, status, internal_or_external)
+VALUES ('2024042703396320181', '2024042703396320180', '添加工作岗位', NULL, NULL, 0, NULL, NULL, 2, 'hire:job_position:add', '1', NULL, 0, NULL, 1, 0, 0, 0, NULL, 'admin', '2024-04-27 15:39:18', NULL, NULL, 0, 0, '1', 0);
+-- 编辑
+INSERT INTO sys_permission(id, parent_id, name, url, component, is_route, component_name, redirect, menu_type, perms, perms_type, sort_no, always_show, icon, is_leaf, keep_alive, hidden, hide_tab, description, create_by, create_time, update_by, update_time, del_flag, rule_flag, status, internal_or_external)
+VALUES ('2024042703396320182', '2024042703396320180', '编辑工作岗位', NULL, NULL, 0, NULL, NULL, 2, 'hire:job_position:edit', '1', NULL, 0, NULL, 1, 0, 0, 0, NULL, 'admin', '2024-04-27 15:39:18', NULL, NULL, 0, 0, '1', 0);
+-- 删除
+INSERT INTO sys_permission(id, parent_id, name, url, component, is_route, component_name, redirect, menu_type, perms, perms_type, sort_no, always_show, icon, is_leaf, keep_alive, hidden, hide_tab, description, create_by, create_time, update_by, update_time, del_flag, rule_flag, status, internal_or_external)
+VALUES ('2024042703396320183', '2024042703396320180', '删除工作岗位', NULL, NULL, 0, NULL, NULL, 2, 'hire:job_position:delete', '1', NULL, 0, NULL, 1, 0, 0, 0, NULL, 'admin', '2024-04-27 15:39:18', NULL, NULL, 0, 0, '1', 0);
+-- 批量删除
+INSERT INTO sys_permission(id, parent_id, name, url, component, is_route, component_name, redirect, menu_type, perms, perms_type, sort_no, always_show, icon, is_leaf, keep_alive, hidden, hide_tab, description, create_by, create_time, update_by, update_time, del_flag, rule_flag, status, internal_or_external)
+VALUES ('2024042703396320184', '2024042703396320180', '批量删除工作岗位', NULL, NULL, 0, NULL, NULL, 2, 'hire:job_position:deleteBatch', '1', NULL, 0, NULL, 1, 0, 0, 0, NULL, 'admin', '2024-04-27 15:39:18', NULL, NULL, 0, 0, '1', 0);
+-- 导出excel
+INSERT INTO sys_permission(id, parent_id, name, url, component, is_route, component_name, redirect, menu_type, perms, perms_type, sort_no, always_show, icon, is_leaf, keep_alive, hidden, hide_tab, description, create_by, create_time, update_by, update_time, del_flag, rule_flag, status, internal_or_external)
+VALUES ('2024042703396320185', '2024042703396320180', '导出excel_工作岗位', NULL, NULL, 0, NULL, NULL, 2, 'hire:job_position:exportXls', '1', NULL, 0, NULL, 1, 0, 0, 0, NULL, 'admin', '2024-04-27 15:39:18', NULL, NULL, 0, 0, '1', 0);
+-- 导入excel
+INSERT INTO sys_permission(id, parent_id, name, url, component, is_route, component_name, redirect, menu_type, perms, perms_type, sort_no, always_show, icon, is_leaf, keep_alive, hidden, hide_tab, description, create_by, create_time, update_by, update_time, del_flag, rule_flag, status, internal_or_external)
+VALUES ('2024042703396320186', '2024042703396320180', '导入excel_工作岗位', NULL, NULL, 0, NULL, NULL, 2, 'hire:job_position:importExcel', '1', NULL, 0, NULL, 1, 0, 0, 0, NULL, 'admin', '2024-04-27 15:39:18', NULL, NULL, 0, 0, '1', 0);
+
+
 -- 修复设置用户生日格式报错
 ALTER TABLE sys_user
 MODIFY COLUMN birthday date NULL DEFAULT NULL COMMENT '生日';
